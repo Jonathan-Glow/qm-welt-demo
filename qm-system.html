@@ -40,18 +40,23 @@
       Startseite
     </a>
 
-    <a href="qm-system.html" class="nav-item active">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-      QM-System
-      <span class="nav-badge">64</span>
-    </a>
+    <div class="nav-group">
+      <a href="qm-system.html" class="nav-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        QM-System
+        <span class="nav-badge">64</span>
+        <button class="nav-caret" id="nav-caret" aria-label="Untermenü ein-/ausklappen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </a>
 
-    <nav class="nav-sub" id="side-sub">
-      <a href="#arbeitsbereich" data-view="arbeitsbereich">QM-Arbeitsbereich</a>
-      <a href="#praxisnachweise" data-view="praxisnachweise">QM-Praxisnachweise</a>
-      <a href="#system" data-view="system">QM-System</a>
-      <a href="#archiv" data-view="archiv">QM-System Archiv</a>
-    </nav>
+      <nav class="nav-sub" id="side-sub">
+        <a href="#arbeitsbereich" data-view="arbeitsbereich">QM-Arbeitsbereich</a>
+        <a href="#praxisnachweise" data-view="praxisnachweise">QM-Praxisnachweise</a>
+        <a href="#system" data-view="system">QM-System</a>
+        <a href="#archiv" data-view="archiv">QM-System Archiv</a>
+      </nav>
+    </div>
 
     <div class="sidebar-bottom">
       <div class="sidebar-bottom-row">
@@ -114,6 +119,43 @@
     <div id="view"></div>
 
   </main>
+</div>
+
+<!-- ════════ CHAT-WIDGET ════════ -->
+<button class="chat-fab" id="chat-fab">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <span class="chat-fab-label">Mit Experten chatten</span>
+  <span class="fab-badge">1</span>
+</button>
+
+<div class="chat-panel" id="chat-panel">
+  <header class="chat-head">
+    <div class="avatar" style="background:#B45309;">M</div>
+    <div class="chat-head-meta">
+      <strong>Markus Brandt</strong>
+      <span>Ihr QM-Experte · Erreichbar</span>
+    </div>
+    <button class="chat-close" id="chat-close" aria-label="Chat schließen">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </header>
+
+  <div class="chat-body" id="chat-body">
+    <div class="chat-day">Heute</div>
+  </div>
+
+  <div class="chat-suggestions" id="chat-suggestions">
+    <button class="chat-chip">Was ist der nächste Schritt?</button>
+    <button class="chat-chip">Wie passe ich ein Formblatt an?</button>
+    <button class="chat-chip">Wann ist mein Audit?</button>
+  </div>
+
+  <form class="chat-input-bar" id="chat-form">
+    <input type="text" id="chat-input" placeholder="Nachricht an Markus schreiben…" autocomplete="off" />
+    <button type="submit" class="chat-send" aria-label="Senden">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </form>
 </div>
 
 <script src="data.js"></script>
