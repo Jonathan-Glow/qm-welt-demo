@@ -50,5 +50,5 @@ fiktive Demo-Werte. Simuliertes Datum: 10. Juni 2026.
 ## Design
 
 - **Schrift:** Plus Jakarta Sans (UI) · Geist Mono (IDs, Versionen, Daten)
-- **Farben:** Helles Grau (#F6F7F9) · Weiß-Panels · Grün-Akzent (#0BB56B)
+- **Farben:** Helles Grau (#F6F7F9) · Weiß-Panels · Grün-Akzent (#007A38, QM-Welt-Markengrün)
 - **Stil:** Clean Business-SaaS — Tabellen, Status-Pills, Icon-Tiles

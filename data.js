@@ -5,7 +5,7 @@
    ============================================ */
 
 const PEOPLE = {
-  jg: { initials: "JG", name: "J. Glasow", role: "Geschäftsführung", color: "#0BB56B" },
+  jg: { initials: "JG", name: "J. Glasow", role: "Geschäftsführung", color: "#007A38" },
   lh: { initials: "LH", name: "L. Hoffmann", role: "QM-Beauftragte", color: "#7C3AED" },
   mb: { initials: "MB", name: "M. Berger", role: "Backoffice", color: "#0D9488" },
   sf: { initials: "M", name: "Markus (QM Welt)", role: "Ihr Berater", color: "#B45309" }

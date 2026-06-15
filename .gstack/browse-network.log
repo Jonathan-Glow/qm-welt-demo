@@ -1,0 +1,8 @@
+[2026-06-15T21:20:29.413Z] GET http://127.0.0.1:8770/index.html → 200 (7ms, 8877B)
+[2026-06-15T21:20:29.427Z] GET https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap → pending (?ms, ?B)
+[2026-06-15T21:20:29.427Z] GET http://127.0.0.1:8770/styles.css → 200 (8ms, 25107B)
+[2026-06-15T21:20:29.428Z] GET http://127.0.0.1:8770/qm-welt-logo.svg → 200 (6ms, 3419B)
+[2026-06-15T21:20:29.428Z] GET http://127.0.0.1:8770/data.js → 200 (7ms, 13234B)
+[2026-06-15T21:20:29.428Z] GET http://127.0.0.1:8770/app.js → 200 (7ms, 17477B)
+[2026-06-15T21:20:29.672Z] GET https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yygg_vb.woff2 → 200 (130ms, 27272B)
+[2026-06-15T21:20:29.672Z] GET https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrcdmhHkjko.woff2 → 200 (144ms, 23108B)
