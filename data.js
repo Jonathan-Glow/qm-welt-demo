@@ -1,14 +1,14 @@
 /* ============================================
-   SAFEST QM-PORTAL — DEMO-DATEN
+   QM WELT QM-PORTAL — DEMO-DATEN
    Echte Dokumentstruktur GlowMedia GmbH.
    Status, Versionen und Daten sind Demo-Werte.
    ============================================ */
 
 const PEOPLE = {
-  jg: { initials: "JG", name: "J. Glasow", role: "Geschäftsführung", color: "#2D5DE0" },
+  jg: { initials: "JG", name: "J. Glasow", role: "Geschäftsführung", color: "#0BB56B" },
   lh: { initials: "LH", name: "L. Hoffmann", role: "QM-Beauftragte", color: "#7C3AED" },
   mb: { initials: "MB", name: "M. Berger", role: "Backoffice", color: "#0D9488" },
-  sf: { initials: "M", name: "Markus (Safest)", role: "Ihr Berater", color: "#B45309" }
+  sf: { initials: "M", name: "Markus (QM Welt)", role: "Ihr Berater", color: "#B45309" }
 };
 
 /* Status: ok = Freigegeben · review = In Prüfung · draft = Entwurf */

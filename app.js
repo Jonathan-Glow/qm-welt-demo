@@ -1,5 +1,5 @@
 /* ============================================
-   SAFEST QM-PORTAL — APP-LOGIK
+   QM WELT QM-PORTAL — APP-LOGIK
    Hash-Routing, Tabellen-Rendering, Suche/Filter
    ============================================ */
 
@@ -48,19 +48,6 @@
         ${ownerHtml(t.owner)}
         ${pill(t.status, t.statusLabel)}
       </div>
-    `).join("");
-  }
-
-  const dashFolders = document.getElementById("dash-folders");
-  if (dashFolders) {
-    dashFolders.innerHTML = FOLDERS.map(f => `
-      <a class="folder-card" href="qm-system.html#system/${f.key}">
-        <div class="folder-tile ${f.tile}">${folderIcon}</div>
-        <div class="folder-info">
-          <div class="folder-name">${f.name}</div>
-          <div class="folder-meta"><strong>${f.docs.length}</strong> Dokumente</div>
-        </div>
-      </a>
     `).join("");
   }
 
@@ -397,7 +384,7 @@
 
 /* ============================================
    GLOBAL UI (beide Seiten):
-   Fortschrittsbalken · Menü einklappen · Chat
+   Fortschrittsbalken · Menü einklappen
    ============================================ */
 (function () {
   "use strict";
@@ -434,109 +421,6 @@
       const collapsed = sub.classList.toggle("collapsed");
       caret.classList.toggle("collapsed", collapsed);
       localStorage.setItem(KEY, collapsed ? "1" : "0");
-    });
-  }
-
-  /* ── Experten-Chat ────────────────────────── */
-  const fab = document.getElementById("chat-fab");
-  const panel = document.getElementById("chat-panel");
-  const closeBtn = document.getElementById("chat-close");
-  const body = document.getElementById("chat-body");
-  const form = document.getElementById("chat-form");
-  const input = document.getElementById("chat-input");
-  const suggestions = document.getElementById("chat-suggestions");
-  if (!fab || !panel) return;
-
-  let initialized = false;
-
-  const REPLIES = {
-    "Was ist der nächste Schritt?":
-      "Aktuell passen wir Ihre Formblätter an Ihre Abläufe an. Sobald die durch sind, planen wir Ihr internes Audit — voraussichtlich Mitte August. Ich melde mich, sobald das nächste Formblatt für Sie zur Freigabe bereitliegt. 👍",
-    "Wie passe ich ein Formblatt an?":
-      "Ganz einfach: Sie öffnen das Formblatt im QM-System — ich habe alles vorausgefüllt. Sie prüfen nur noch und geben frei. Wenn etwas nicht passt, schreiben Sie es mir hier, dann ändere ich es für Sie.",
-    "Wann ist mein Audit?":
-      "Ihr internes Audit ist für den 12. August geplant, das Zertifizierungsaudit folgt im September. Beides läuft vollständig digital — Sie müssen nichts vor Ort vorbereiten."
-  };
-  const FALLBACK = [
-    "Alles klar, ich kümmere mich darum und melde mich gleich mit den Details. 👍",
-    "Gute Frage — ich schaue mir das direkt an. Einen Moment.",
-    "Notiert! Ich bereite das für Sie vor und gebe Ihnen Bescheid, sobald es bereitliegt."
-  ];
-  let fbIdx = 0;
-
-  const now = () => {
-    const d = new Date();
-    return String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
-  };
-
-  function scrollDown() { body.scrollTop = body.scrollHeight; }
-
-  function addMsg(dir, text) {
-    const wrap = document.createElement("div");
-    wrap.className = "msg " + dir;
-    const av = dir === "in"
-      ? `<div class="avatar" style="background:#B45309;">M</div>`
-      : `<div class="avatar" style="background:#2D5DE0;">JG</div>`;
-    wrap.innerHTML = `${av}<div><div class="msg-bubble">${text}</div><span class="msg-time">${now()}</span></div>`;
-    body.appendChild(wrap);
-    scrollDown();
-  }
-
-  function showTyping() {
-    const t = document.createElement("div");
-    t.className = "msg in";
-    t.id = "typing-indicator";
-    t.innerHTML = `<div class="avatar" style="background:#B45309;">M</div><div class="msg-bubble"><div class="typing"><span></span><span></span><span></span></div></div>`;
-    body.appendChild(t);
-    scrollDown();
-  }
-  function hideTyping() {
-    const t = document.getElementById("typing-indicator");
-    if (t) t.remove();
-  }
-
-  function expertReply(text) {
-    showTyping();
-    setTimeout(() => { hideTyping(); addMsg("in", text); }, 1300);
-  }
-
-  function init() {
-    if (initialized) return;
-    initialized = true;
-    showTyping();
-    setTimeout(() => {
-      hideTyping();
-      addMsg("in", "Hallo Jonathan! 👋 Schön, dass Sie reinschauen. Ich begleite Sie persönlich durch Ihre ISO 9001-Zertifizierung. Womit kann ich Ihnen helfen?");
-    }, 900);
-  }
-
-  function openChat() {
-    panel.classList.add("open");
-    fab.classList.add("hidden");
-    const badge = fab.querySelector(".fab-badge");
-    if (badge) badge.style.display = "none";
-    init();
-    setTimeout(() => input && input.focus(), 250);
-  }
-  function closeChat() {
-    panel.classList.remove("open");
-    fab.classList.remove("hidden");
-  }
-
-  function send(text) {
-    const msg = text.trim();
-    if (!msg) return;
-    addMsg("out", msg);
-    input.value = "";
-    expertReply(REPLIES[msg] || FALLBACK[fbIdx++ % FALLBACK.length]);
-  }
-
-  fab.addEventListener("click", openChat);
-  closeBtn.addEventListener("click", closeChat);
-  form.addEventListener("submit", (e) => { e.preventDefault(); send(input.value); });
-  if (suggestions) {
-    suggestions.querySelectorAll(".chat-chip").forEach(chip => {
-      chip.addEventListener("click", () => send(chip.textContent));
     });
   }
 

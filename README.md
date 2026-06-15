@@ -1,4 +1,4 @@
-# Safest QM-Portal — Clickable Sales-Demo
+# QM Welt QM-Portal — Clickable Sales-Demo
 
 Statischer HTML-Prototyp für Verkaufsgespräche mit KMU-Kunden, die an einer
 ISO-Zertifizierung interessiert sind. Zeigt, wie das QM-System des Kunden
@@ -16,13 +16,13 @@ open index.html
 python3 -m http.server 8765
 ```
 
-Live: https://jonathan-glow.github.io/safest-sales-demo/
+Live: https://jonathan-glow.github.io/qm-welt-sales-demo/
 
 ## Aufbau
 
 | Datei | Inhalt |
 |---|---|
-| `index.html` | **Startseite** — KPIs, offene Aufgaben, Aktivitäten, Schnellzugriff |
+| `index.html` | **Startseite** — Fortschritt, offene Aufgaben, Aktivitäten |
 | `qm-system.html` | **QM-System-Bereich** mit 4 Reitern (JS-gerendert, Hash-Routing) |
 | `data.js` | Alle Demo-Daten (Dokumente, Aufgaben, Nachweise, Archiv, Personen) |
 | `app.js` | Rendering, Tab-Routing, Suche, Status-Filter |
@@ -50,5 +50,5 @@ fiktive Demo-Werte. Simuliertes Datum: 10. Juni 2026.
 ## Design
 
 - **Schrift:** Plus Jakarta Sans (UI) · Geist Mono (IDs, Versionen, Daten)
-- **Farben:** Helles Grau (#F6F7F9) · Weiß-Panels · Blau-Akzent (#2D5DE0)
+- **Farben:** Helles Grau (#F6F7F9) · Weiß-Panels · Grün-Akzent (#0BB56B)
 - **Stil:** Clean Business-SaaS — Tabellen, Status-Pills, Icon-Tiles
